@@ -11,12 +11,21 @@
 </ion-header>
 
 <ion-content>
-  <calendar  [weekviewNormalEventTemplate]="template"
+  <calendar  [weekviewNormalEventTemplate]="weekEvents"
   [eventSource]="eventSource" [calendarMode]="calendar.mode" [currentDate]="calendar.currentDate"
     (onCurrentDateChanged)="onCurrentDateChanged($event)" (onEventSelected)="onEventSelected($event)"
     (onTitleChanged)="onViewTitleChanged($event)" (onTimeSelected)="onTimeSelected($event)" step="30">
   </calendar>
-  <ng-template #template let-displayEvent="displayEvent">
-      <div class="calendar-event-inner" [ngClass]="getCustomClass(displayEvent.event.color)">{{displayEvent.event.title}}</div>
+  <ng-template #template let-day="day" let-eventTemplate="eventTemplate">
+      <div [ngClass]="{'calendar-event-wrap': day.events}" *ngIf="day===onTimeSelected($event)"
+           [ngStyle]="{height: 50*day.events.length+'px'}">
+          <div *ngFor="let displayEvent of day.events" class="calendar-event" tappable
+               (click)="onEventSelected(displayEvent.event)"
+               [ngStyle]="{top: 25*displayEvent.position+'px', width: 100*(displayEvent.endIndex-displayEvent.startIndex)+'%', height: '25px'}">
+              <ng-template [ngTemplateOutlet]="eventTemplate"
+                           [ngTemplateOutletContext]="{displayEvent:displayEvent}">
+              </ng-template>
+          </div>
+      </div>
   </ng-template>
 </ion-content>

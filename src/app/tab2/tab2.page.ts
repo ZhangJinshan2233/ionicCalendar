@@ -8,10 +8,10 @@ import { Component } from '@angular/core';
 export class Tab2Page {
   getCustomClass(someParameter) {
     return 'red';
-}
+  }
   eventSource;
   viewTitle;
-  isToday=true;
+  isToday = true;
   calendar = {
     mode: 'month',
     currentDate: new Date()
@@ -32,8 +32,8 @@ export class Tab2Page {
     this.calendar.currentDate = new Date();
   }
   onTimeSelected(ev) {
-    console.log('Selected time: ' + ev.selectedTime + ', hasEvents: ' +
-      (ev.events !== undefined && ev.events.length !== 0) + ', disabled: ' + ev.disabled);
+   return ev.selectedTime
+
   }
   onCurrentDateChanged(event: Date) {
     var today = new Date();

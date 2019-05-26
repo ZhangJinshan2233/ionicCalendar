@@ -10,10 +10,6 @@
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
 
-// .weekview-allday-table {
-//     height: 20px;
-// }
-
 .calendar-hour-column {
     display: none
 }
@@ -48,28 +44,21 @@
 }
 
 .day {
-   
+    padding-bottom: 10px;
 }
 
-.weekview-selected .day .circle {
-    padding: 10px;
+.weekview-selected .day .circle small {
+    padding:10px;
     border-radius: 50%;
     background-color: bisque
 }
-// .weekview-allday-table {
-//     height: 10px;
-//     position: relative;
-//     border-bottom: 1px solid #ddd;
-//     font-size: 14px;
-//   }
+
 calendar{
     .weekview-allday-table{
         display:none;
         height:0px !important;
     }
-    // .table.table-fixed.weekview-allday-content-table{
-    //     height:0px !important;
-    // }
+
     .weekview-normal-event-container{
         display:none;
       

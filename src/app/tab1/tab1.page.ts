@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CalendarComponent } from 'ionic2-calendar/calendar';
 import { MonthViewComponent } from 'ionic2-calendar/monthview';
 import { WeekViewComponent } from 'ionic2-calendar/weekview';
@@ -8,7 +8,11 @@ import { DayViewComponent } from 'ionic2-calendar/dayview';
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss']
 })
-export class Tab1Page {
+export class Tab1Page implements OnInit{
+  ngOnInit(){
+this.test=new Date().toISOString()
+  }
+  test=""
   eventSource=[]
   calendar={
     mode:'week',
@@ -27,8 +31,8 @@ export class Tab1Page {
 
   }
   onTimeSelected($event) {
-   console.log($event)
-  }
+    this.test=$event.selectedTime
+    }
   getCustomClass(someParameter) {
     return 'red';
 }

@@ -1,0 +1,80 @@
+// http://ionicframework.com/docs/theming/
+@import '~@ionic/angular/css/core.css';
+@import '~@ionic/angular/css/normalize.css';
+@import '~@ionic/angular/css/structure.css';
+@import '~@ionic/angular/css/typography.css';
+@import '~@ionic/angular/css/display.css';
+@import '~@ionic/angular/css/padding.css';
+@import '~@ionic/angular/css/float-elements.css';
+@import '~@ionic/angular/css/text-alignment.css';
+@import '~@ionic/angular/css/text-transformation.css';
+@import '~@ionic/angular/css/flex-utils.css';
+
+// .weekview-allday-table {
+//     height: 20px;
+// }
+
+.calendar-hour-column {
+    display: none
+}
+
+.day-header-week {
+    // background-color: lightcoral;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    padding-bottom: 10px
+}
+
+.table>thead>tr>th,
+.table>tbody>tr>th,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>tbody>tr>td,
+.table>tfoot>tr>td {
+    padding: 0px !important;
+}
+.table-bordered{
+    border-top:0px !important;
+    border-left: 0px !important;
+    border-right: 0px !important;
+}
+.table-bordered>thead>tr>th,
+.table-bordered>tbody>tr>th,
+.table-bordered>tfoot>tr>th,
+.table-bordered>thead>tr>td,
+.table-bordered>tbody>tr>td,
+.table-bordered>tfoot>tr>td {
+    border: none !important;
+}
+
+.day {
+   
+}
+
+.weekview-selected .day .circle {
+    padding: 10px;
+    border-radius: 50%;
+    background-color: bisque
+}
+// .weekview-allday-table {
+//     height: 10px;
+//     position: relative;
+//     border-bottom: 1px solid #ddd;
+//     font-size: 14px;
+//   }
+calendar{
+    .weekview-allday-table{
+        display:none;
+        height:0px !important;
+    }
+    // .table.table-fixed.weekview-allday-content-table{
+    //     height:0px !important;
+    // }
+    .weekview-normal-event-container{
+        display:none;
+      
+    }
+    .weekview-container{
+        height: 73px !important;
+      }
+}

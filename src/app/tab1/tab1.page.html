@@ -1,0 +1,51 @@
+
+ 
+
+<ion-content>
+    <ion-button>123</ion-button>
+  <calendar
+  [weekviewHeaderTemplate]="customDayHeaderTemplate"
+  [eventSource]="eventSource"
+  [calendarMode]="calendar.mode"
+  [currentDate]="calendar.currentDate"
+  (onCurrentDateChanged)="onCurrentDateChanged($event)"
+  (onRangeChanged)="reloadSource(startTime, endTime)"
+  (onEventSelected)="onEventSelected($event)"
+  (onTitleChanged)="onViewTitleChanged($event)"
+  (onTimeSelected)="onTimeSelected($event)"
+  step="10"
+  [markDisabled]="markDisabled"
+  >
+  
+</calendar>
+<ng-template #customDayHeaderTemplate let-viewDate="viewDate">
+  <div class="day-header-week">
+      <small > {{ viewDate.dayHeader.split(' ')[0]}} </small>
+  </div>
+ 
+  <div class="week-day-container">
+      <div class="day">
+          <div class="circle">
+              {{ viewDate.dayHeader.split(' ')[1] }}
+          </div>
+      </div>
+      <div class="event-marker"></div>
+  </div>
+</ng-template>
+<!-- <ng-template #weekEvents let-displayEvent="displayEvent">
+  <div class="calendar-event-inner" 
+  [style.backgroundColor]="dataService.getColor(displayEvent.event)"
+  [style.top]="(37*displayEvent.startOffset/hourParts)+'px'"
+  [style.left]="100/displayEvent.overlapNumber*displayEvent.position+'%'"
+  [style.width]="100/displayEvent.overlapNumber+'%'"
+  [style.height]="37*(displayEvent.endIndex - displayEvent.startIndex) - 4 + 'px'"
+  >123</div>
+</ng-template> -->
+<ng-template #template let-displayEvent="displayEvent">
+  <div class="calendar-event-inner" [ngClass]="getCustomClass(displayEvent.event.customProperty)">{{displayEvent.event.title}}</div>
+</ng-template>
+<ion-button>123</ion-button>
+ <ion-item>
+    <ion-range dualKnobs="true" min="21" max="72" step="3" snaps="true"></ion-range>
+  </ion-item>
+</ion-content>

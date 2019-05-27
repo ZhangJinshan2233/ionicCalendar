@@ -1,13 +1,13 @@
 <ion-header>
   <ion-toolbar color="primary">
-      <ion-buttons slot="start">
-          <ion-button>
-            <ion-back-button></ion-back-button>
-          </ion-button>
-        </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-back-button></ion-back-button>
+      </ion-button>
+    </ion-buttons>
 
     <ion-title>
-     May 2019|20 week
+      May 2019|20 week
     </ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="today()">Today</ion-button>
@@ -38,8 +38,68 @@
       <div class="event-marker"></div>
     </div>
   </ng-template>
-  
-  <ion-input  [(ngModel)]="test">
-   
-  </ion-input>
+  <ion-card>
+    <ion-header>
+      <ion-card-title>
+        drink water
+      </ion-card-title>
+    </ion-header>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row class="ion-justify-content-center">
+          <ion-col size='1.5' class="ion-align-self-center">
+            <div>
+              <ion-label class='circle1'>
+                Sun
+              </ion-label>
+            </div>
+          </ion-col>
+          <ion-col size='1.5' class="ion-align-self-center">
+            <div>
+              <ion-label class='circle1'>
+                Mon
+              </ion-label>
+            </div>
+          </ion-col>
+          <ion-col size='1.5' class="ion-align-self-center">
+            <div>
+              <ion-label class='circle1'>
+                Tue
+              </ion-label>
+            </div>
+          </ion-col>
+          <ion-col size='1.5' class="ion-align-self-center">
+            <div>
+              <ion-label class='circle1'>
+                Wen
+              </ion-label>
+            </div>
+          </ion-col>
+          <ion-col size='1.5' class="ion-align-self-center">
+            <div>
+              <ion-label class='circle1'>
+                Thu
+              </ion-label>
+            </div>
+          </ion-col>
+          <ion-col size='1.5' class="ion-align-self-center">
+            <div>
+              <ion-label class='circle1'>
+                Fir
+              </ion-label>
+            </div>
+          </ion-col>
+          <ion-col size='1.5' class="ion-align-self-center">
+            <div>
+              <ion-label class='circle1'>
+                Sat
+              </ion-label>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+
 </ion-content>

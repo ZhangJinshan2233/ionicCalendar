@@ -8,15 +8,15 @@ import { DayViewComponent } from 'ionic2-calendar/dayview';
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss']
 })
-export class Tab1Page implements OnInit{
-  ngOnInit(){
-this.test=new Date().toISOString()
+export class Tab1Page implements OnInit {
+  ngOnInit() {
+    this.test = new Date().toISOString()
   }
-  test=""
-  eventSource=[]
-  calendar={
-    mode:'week',
-    currentDate:new Date()
+  test = ""
+  eventSource = []
+  calendar = {
+    mode: 'week',
+    currentDate: new Date()
   }
   onCurrentDateChanged($event) {
 
@@ -31,10 +31,16 @@ this.test=new Date().toISOString()
 
   }
   onTimeSelected($event) {
-    this.test=$event.selectedTime
-    }
+    this.test = $event.selectedTime
+  }
   getCustomClass(someParameter) {
     return 'red';
+  }
+  getBackgroundColor() {
+   return {
+     backgroundColor:"blue"
+   }
+  
 }
 
 }

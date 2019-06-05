@@ -9,6 +9,7 @@ import { formatDate } from '@angular/common';
   templateUrl: 'tab3.page.html',
   styleUrls: ['tab3.page.scss']
 })
+
 export class Tab3Page {
   event = {
     title: '',
@@ -17,7 +18,7 @@ export class Tab3Page {
     endTime: '',
     allDay: false
   };
-
+  specialEvents:any;
   minDate = new Date().toISOString();
 
   eventSource = [];
@@ -100,7 +101,7 @@ export class Tab3Page {
     // Use Angular date pipe for conversion
     let start = formatDate(event.startTime, 'medium', this.locale);
     let end = formatDate(event.endTime, 'medium', this.locale);
-
+   
     const alert = await this.alertCtrl.create({
       header: event.title,
       subHeader: event.desc,
@@ -117,4 +118,7 @@ export class Tab3Page {
     selected.setHours(selected.getHours() + 1);
     this.event.endTime = (selected.toISOString());
   }
+
+
+ 
 }

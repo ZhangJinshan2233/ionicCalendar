@@ -75,6 +75,7 @@
   </ion-row>
 
   <calendar
+  [weekviewAllDayEventTemplate]="template"
    [eventSource]="eventSource" 
   [calendarMode]="calendar.mode"
    [currentDate]="calendar.currentDate"
@@ -86,5 +87,13 @@
     step="30"
     startingDayWeek="1">
   </calendar>
+  <ng-template #template let-displayEvent="event">
 
+    <div class="calendar-event-inner">
+      <div>
+          {{displayEvent.event.title}}
+      </div>
+     <small>33</small>
+    </div>
+</ng-template>
 </ion-content>

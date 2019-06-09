@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>timeDifference</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-row class='ion-justify-content-between ion-align-items-center'>
+  <ion-col size='2'>
+    <ion-button fill="clear" (click)="getPreWeek()">
+      <ion-icon name="arrow-dropleft" slot="icon-only"></ion-icon>
+    </ion-button>
+  </ion-col>
+  <ion-col class="ion-text-center"  size='8'>
+    <div>
+      <ion-label>
+        {{startDayOfWeek}}
+      </ion-label>
+      <ion-label>
+        -
+      </ion-label>
+      <ion-label>
+        {{lastDayOfWeek}}
+      </ion-label>
+    </div>
+  </ion-col>
+  <ion-col size='2'>
+    <ion-button  fill="clear"  (click)="getNextWeek()">
+      <ion-icon name="arrow-dropright" slot="icon-only"></ion-icon>
+    </ion-button>
+  </ion-col>
+</ion-row>
+<ion-row class='ion-justify-content-between ion-align-items-center'>
+  <ion-col size='2'>
+    <ion-button fill="clear" (click)="getPreMonth()">
+      <ion-icon name="arrow-dropleft" slot="icon-only"></ion-icon>
+    </ion-button>
+  </ion-col>
+  <ion-col class="ion-text-center">
+    <div>
+      <ion-label>
+        {{currentMonth| date:'MMM/yyyy'}}
+      </ion-label>
+    </div>
+  </ion-col>
+  <ion-col size='2'>
+    <ion-button  fill="clear"  (click)="getNextMonth()">
+      <ion-icon name="arrow-dropright" slot="icon-only"></ion-icon>
+    </ion-button>
+  </ion-col>
+</ion-row>
+<ion-row class='ion-justify-content-between ion-align-items-center'>
+  <ion-col size='2'>
+    <ion-button fill="clear" (click)="getPreYear()">
+      <ion-icon name="arrow-dropleft" slot="icon-only"></ion-icon>
+    </ion-button>
+  </ion-col>
+  <ion-col class="ion-text-center">
+    <div>
+      <ion-label>
+        {{currentYear| date:'yyyy'}}
+      </ion-label>
+    </div>
+  </ion-col>
+  <ion-col size='2'>
+    <ion-button  fill="clear"  (click)="getNextYear()">
+      <ion-icon name="arrow-dropright" slot="icon-only"></ion-icon>
+    </ion-button>
+  </ion-col>
+</ion-row>
+<ion-card>
+  <ion-card-header>
+    Line Chart
+  </ion-card-header>
+  <ion-card-content>
+    <canvas #lineCanvas></canvas>
+  </ion-card-content>
+</ion-card>
+</ion-content>
